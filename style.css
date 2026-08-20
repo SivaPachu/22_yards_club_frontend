@@ -716,3 +716,646 @@ nav ul a:hover {
         justify-content: flex-start;
     }
 }
+/* ================= SHOP HERO ================= */
+
+#shop__hero {
+    min-height: 330px;
+    background: #123d2a;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 5%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#shop__hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid rgba(217, 164, 65, 0.25);
+
+    border-radius: 50%;
+
+    right: -100px;
+    top: -100px;
+}
+
+#shop__hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border: 2px solid rgba(217, 164, 65, 0.15);
+
+    border-radius: 50%;
+
+    left: -80px;
+    bottom: -100px;
+}
+
+.shop__hero__content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.shop__hero__content .section__label {
+    color: #d9a441;
+}
+
+.shop__hero__content h1 {
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+.shop__hero__content p:last-child {
+    color: #d7e2db;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= SHOP FILTERS ================= */
+
+.shop__filters {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.filter__btn {
+    padding: 11px 22px;
+
+    border: 2px solid #123d2a;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #123d2a;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.filter__btn:hover,
+.filter__btn.active {
+    background: #123d2a;
+
+    color: #d9a441;
+}
+
+
+/* ================= PRODUCT GRID ================= */
+
+.shop__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* ================= PRODUCT CARD ================= */
+
+.shop__product {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.shop__product:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(18, 61, 42, 0.12);
+}
+
+
+/* ================= PRODUCT IMAGE ================= */
+
+.shop__image {
+    height: 270px;
+
+    background: #e5eee7;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.shop__image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.shop__product:hover .shop__image img {
+    transform: scale(1.06);
+}
+
+
+/* ================= PRODUCT BADGE ================= */
+
+.shop__badge {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #d9a441;
+
+    color: #123d2a;
+
+    padding: 5px 10px;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    z-index: 2;
+}
+
+
+/* ================= WISHLIST ================= */
+
+.shop__wishlist {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #123d2a;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+
+    z-index: 2;
+}
+
+.shop__wishlist:hover {
+    background: #123d2a;
+
+    color: #d9a441;
+}
+
+.shop__wishlist.active {
+    color: #d93838;
+}
+
+
+/* ================= PRODUCT DETAILS ================= */
+
+.shop__details {
+    padding: 20px;
+}
+
+.shop__category {
+    color: #d9a441;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.shop__details h3 {
+    color: #123d2a;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+    min-height: 44px;
+}
+
+
+/* ================= RATING ================= */
+
+.shop__rating {
+    color: #d9a441;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.shop__rating span {
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* ================= PRICE ================= */
+
+.shop__price {
+    color: #123d2a;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================= ADD TO CART ================= */
+
+.shop__cart {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 2px solid #123d2a;
+
+    background: transparent;
+
+    color: #123d2a;
+
+    border-radius: 4px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.shop__cart:hover {
+    background: #123d2a;
+
+    color: #d9a441;
+}
+
+
+/* ================= HIDDEN PRODUCTS ================= */
+
+.shop__product.hidden {
+    display: none;
+}
+
+
+/* ================= ACTIVE NAV LINK ================= */
+
+.active__link {
+    color: #d9a441 !important;
+}
+
+
+/* ================= SHOP SEARCH ================= */
+
+.shop__search {
+    max-width: 650px;
+
+    margin: 30px auto 35px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 50px;
+
+    padding: 0 20px;
+
+    height: 55px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shop__search > i {
+    flex-shrink: 0;
+
+    font-size: 18px;
+
+    color: #777;
+
+    margin-right: 12px;
+}
+
+.shop__search input {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    background: transparent;
+
+    color: #222;
+}
+
+.shop__search input::placeholder {
+    color: #999;
+}
+
+#clearSearch {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #888;
+
+    font-size: 17px;
+
+    display: none;
+}
+
+#clearSearch:hover {
+    color: #222;
+}
+
+
+/* ================= SIDE NAVBAR ================= */
+
+#sidenav {
+    position: fixed;
+
+    top: 0;
+
+    left: -280px;
+
+    width: 280px;
+
+    height: 100vh;
+
+    background: #123d2a;
+
+    color: white;
+
+    z-index: 9999;
+
+    transition: left 0.3s ease;
+
+    padding: 20px;
+}
+
+#sidenav.active {
+    left: 0;
+}
+
+.close__btn__container {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+#closenav {
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 35px;
+
+    cursor: pointer;
+}
+
+#closenav:hover {
+    color: #d9a441;
+}
+
+#sidenav ul {
+    list-style: none;
+
+    padding: 40px 0 0;
+}
+
+#sidenav ul li {
+    margin-bottom: 20px;
+}
+
+#sidenav ul li a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+#sidenav ul li a:hover {
+    color: #d9a441;
+}
+
+
+/* ================= MOBILE MENU ICON ================= */
+
+#menuicon {
+    display: none;
+
+    width: 30px;
+
+    height: 30px;
+
+    cursor: pointer;
+
+    color: #123d2a;
+}
+
+
+/* ================= MOBILE SHOP ================= */
+
+@media (max-width: 768px) {
+
+    #menuicon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    #shop__hero {
+        min-height: 280px;
+    }
+
+    .shop__hero__content h1 {
+        font-size: 36px;
+    }
+
+    .shop__hero__content p:last-child {
+        font-size: 15px;
+    }
+
+    .shop__filters {
+        gap: 8px;
+    }
+
+    .filter__btn {
+        padding: 9px 15px;
+
+        font-size: 13px;
+    }
+
+    .shop__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .shop__image {
+        height: 210px;
+    }
+
+    .shop__details {
+        padding: 15px;
+    }
+
+    .shop__details h3 {
+        font-size: 15px;
+
+        min-height: auto;
+    }
+
+    .shop__price {
+        font-size: 17px;
+    }
+
+    .shop__search {
+        height: 50px;
+
+        padding: 0 15px;
+    }
+
+    .shop__search input {
+        font-size: 14px;
+    }
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .shop__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop__image {
+        height: 260px;
+    }
+
+    #shop__hero {
+        min-height: 250px;
+
+        padding: 40px 20px;
+    }
+
+    .shop__hero__content h1 {
+        font-size: 30px;
+    }
+
+    .shop__filters {
+        justify-content: flex-start;
+    }
+
+    .filter__btn {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .shop__search {
+        margin-top: 20px;
+    }
+}
