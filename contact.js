@@ -1,98 +1,33 @@
-const form = document.getElementById("contactForm");
+// Top Ad Banner Section
+const adBanner = document.getElementById("adbanner");
+const closeAdBtn = document.getElementById("closead");
 
+if (closeAdBtn && adBanner) {
+    closeAdBtn.addEventListener("click", () => {
+        adBanner.style.display = "none";
+    });
+}
 
-form.addEventListener("submit", function(event) {
+// Side Navbar Section
+const menuIcon = document.getElementById("menuicon");
+const sideNav = document.getElementById("sidenav");
+const closeNav = document.getElementById("closenav");
+const sideLinks = sideNav ? sideNav.querySelectorAll("a") : [];
 
-    event.preventDefault();
+if (menuIcon && sideNav) {
+    menuIcon.addEventListener("click", function () {
+        sideNav.classList.add("active");
+    });
+}
 
+if (closeNav && sideNav) {
+    closeNav.addEventListener("click", function () {
+        sideNav.classList.remove("active");
+    });
+}
 
-    const name =
-        document.getElementById("name").value.trim();
-
-    const email =
-        document.getElementById("email").value.trim();
-
-    const phone =
-        document.getElementById("phone").value.trim();
-
-    const message =
-        document.getElementById("message").value.trim();
-
-
-    document.getElementById("nameError").textContent = "";
-    document.getElementById("emailError").textContent = "";
-    document.getElementById("phoneError").textContent = "";
-    document.getElementById("messageError").textContent = "";
-
-
-    let valid = true;
-
-
-    if (name === "") {
-
-        document.getElementById("nameError").textContent =
-            "Please enter your name.";
-
-        valid = false;
-    }
-
-
-    const emailPattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if (email === "") {
-
-        document.getElementById("emailError").textContent =
-            "Please enter your email.";
-
-        valid = false;
-
-    } else if (!emailPattern.test(email)) {
-
-        document.getElementById("emailError").textContent =
-            "Enter a valid email address.";
-
-        valid = false;
-    }
-
-
-    const phonePattern = /^[0-9]{10}$/;
-
-
-    if (phone === "") {
-
-        document.getElementById("phoneError").textContent =
-            "Please enter your phone number.";
-
-        valid = false;
-
-    } else if (!phonePattern.test(phone)) {
-
-        document.getElementById("phoneError").textContent =
-            "Enter a valid 10 digit phone number.";
-
-        valid = false;
-    }
-
-
-    if (message === "") {
-
-        document.getElementById("messageError").textContent =
-            "Please enter your message.";
-
-        valid = false;
-    }
-
-
-    if (valid) {
-
-        alert(
-            "Thank you for contacting 22 Yards Club!"
-        );
-
-        form.reset();
-
-    }
-
+sideLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        sideNav.classList.remove("active");
+    });
 });

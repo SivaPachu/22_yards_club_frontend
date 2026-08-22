@@ -2,226 +2,162 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Us | 22 Yards Club</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
-
 </head>
-
 
 <body>
 
-    <!-- TOP BAR -->
-
-    <div class="top-bar">
-        Free Shipping on Orders Above ₹999
+    <!-- Top Ad Banner Section-->
+    <div id="adbanner">
+        <p>Join the club and <b>Get a Free Pack of Match Balls</b> with your first bat purchase</p>
+        <span id="closead">&times;</span>
     </div>
 
+    <!-- NavBar Section -->
+    <nav>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-baseball-bat-ball"></i>
+            <span>22 Yards <b>Club</b></span>
+        </a>
 
-    <!-- HEADER -->
+        <svg id="menuicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
 
-    <header class="header">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html#upcoming">Upcoming</a></li>
+            <li><a href="index.html#sale__section">Sale</a></li>
+            <li><a href="contact.html" class="active__link">Contact</a></li>
+            <li><a href="cart.html" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </nav>
 
-        <div class="logo">
-            🏏 22 YARDS CLUB
+    <!-- Side NavBar Section -->
+    <section id="sidenav">
+        <div class="close__btn__container">
+            <button id="closenav">&times;</button>
         </div>
-
-
-        <nav>
-
-            <a href="index.html">Home</a>
-
-            <a href="shop.html">Shop</a>
-
-            <a href="about.html">About</a>
-
-            <a href="contact.html" class="active">Contact</a>
-
-            <a href="cart.html">Cart</a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- CONTACT HERO -->
-
-    <section class="hero">
-
-        <h1>Contact Us</h1>
-
-        <p>
-            We're here to help you with all your cricket needs.
-        </p>
-
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html#upcoming">Upcoming</a></li>
+            <li><a href="index.html#sale__section">Sale</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
     </section>
 
+    <!-- CONTACT HERO -->
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help you with all your cricket needs.</p>
+    </section>
 
     <!-- CONTACT CONTENT -->
-
     <section class="contact-container">
 
-
         <!-- LEFT SIDE -->
-
         <div class="contact-info">
-
             <h2>Get In Touch</h2>
-
             <p>
                 Have questions about our cricket products,
                 orders or delivery? Feel free to contact us.
             </p>
 
-
             <div class="info-box">
-
                 <span>📞</span>
-
                 <div>
                     <h3>Phone</h3>
                     <p>+91 98765 43210</p>
                 </div>
-
             </div>
 
-
             <div class="info-box">
-
                 <span>📧</span>
-
                 <div>
                     <h3>Email</h3>
                     <p>support@22yardsclub.com</p>
                 </div>
-
             </div>
 
-
             <div class="info-box">
-
                 <span>📍</span>
-
                 <div>
                     <h3>Location</h3>
                     <p>Coimbatore, Tamil Nadu</p>
                 </div>
-
             </div>
 
-
             <div class="info-box">
-
                 <span>🕐</span>
-
                 <div>
                     <h3>Working Hours</h3>
                     <p>Mon - Sat : 9:00 AM - 6:00 PM</p>
                 </div>
-
             </div>
-
         </div>
 
-
         <!-- RIGHT SIDE FORM -->
-
         <div class="contact-form">
-
             <h2>Send Us a Message</h2>
 
-
             <form id="contactForm">
-
-
-                <label for="name">
-                    Your Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                >
-
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
                 <span id="nameError" class="error"></span>
 
-
-                <label for="email">
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                >
-
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
                 <span id="emailError" class="error"></span>
 
-
-                <label for="phone">
-                    Phone Number
-                </label>
-
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter 10 digit phone number"
-                >
-
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter 10 digit phone number">
                 <span id="phoneError" class="error"></span>
 
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Write your message..."
-                ></textarea>
-
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Write your message..."></textarea>
                 <span id="messageError" class="error"></span>
 
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-
+                <button type="submit">Send Message</button>
             </form>
-
         </div>
 
     </section>
 
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <h2>22 YARDS CLUB</h2>
-
-        <p>
-            Your trusted destination for cricket equipment.
-        </p>
-
-        <p>
-            © 2026 22 Yards Club. All Rights Reserved.
-        </p>
-
+    <!-- Footer Section -->
+    <footer class="mod__footer">
+        <div class="footer__container">
+            <div class="footer__left">
+                <h2>
+                    <i class="fa-solid fa-baseball-bat-ball"></i> 22 Yards <span>Club</span>
+                </h2>
+                <p>
+                    22 Yards Club is your ultimate destination for premium cricket gear. We bring together pro-grade
+                    equipment, trusted brands, and a seamless shopping experience for every player stepping onto the
+                    pitch.
+                </p>
+                <p class="copyright">&copy; 2026 22 Yards Club. All rights reserved.</p>
+            </div>
+            <div class="footer__right">
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-
     <script src="contact.js"></script>
-
 </body>
 
 </html>
