@@ -1449,6 +1449,33 @@ nav ul a:hover {
     margin-bottom: 20px;
 }
 
+/* //Responsive styles for cart page */
+@media (max-width: 768px) {
+
+    .cart-section {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .cart-item {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .cart-item img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cart-item-info h3 {
+        font-size: 16px;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+}
+
 
 .add-cart-btn {
     background-color: #123d2a;

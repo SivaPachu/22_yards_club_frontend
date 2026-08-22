@@ -1,8 +1,34 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+const menuIcon = document.getElementById("menuicon");
+const sideNav = document.getElementById("sidenav");
+const closeNav = document.getElementById("closenav");
 const cartContainer = document.getElementById("cart-container");
 const cartTotal = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
+
+
+if (menuIcon && sideNav) {
+    menuIcon.addEventListener("click", function () {
+        sideNav.classList.add("active");
+    });
+}
+
+
+if (closeNav && sideNav) {
+    closeNav.addEventListener("click", function () {
+        sideNav.classList.remove("active");
+    });
+}
+
+
+if (sideNav) {
+    sideNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            sideNav.classList.remove("active");
+        });
+    });
+}
 
 
 function displayCart() {
