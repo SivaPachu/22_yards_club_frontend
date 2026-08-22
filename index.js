@@ -81,3 +81,77 @@ heartButtons.forEach(btn => {
         }
     });
 });
+
+// ================================
+// ADD TO CART FUNCTIONALITY
+// ================================
+
+const addCartButtons = document.querySelectorAll(".add-cart-btn");
+const cartCount = document.getElementById("cart-count");
+
+// Get cart from localStorage
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+// Update cart count
+function updateCartCount() {
+    let totalItems = 0;
+
+    cart.forEach(product => {
+        totalItems += product.quantity;
+    });
+
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+    }
+}
+
+
+// Add product to cart
+addCartButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const name = this.dataset.name;
+        const price = Number(this.dataset.price);
+        const image = this.dataset.image;
+
+        // Check whether product already exists
+        const existingProduct = cart.find(product => product.name === name);
+
+        if (existingProduct) {
+
+            // Increase quantity
+            existingProduct.quantity++;
+
+        } else {
+
+            // Add new product
+            cart.push({
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1
+            });
+        }
+
+        // Save cart
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update count
+        updateCartCount();
+
+        // Button message
+        this.innerHTML = '<i class="fa-solid fa-check"></i> Added';
+
+        setTimeout(() => {
+            this.innerHTML = '<i class="fa-solid fa-cart-plus"></i> Add to Cart';
+        }, 1000);
+
+    });
+
+});
+
+
+// Update count when page loads
+updateCartCount();

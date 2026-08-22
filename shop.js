@@ -72,9 +72,26 @@ const searchInput = document.getElementById("shopSearch");
 
 const clearSearch = document.getElementById("clearSearch");
 
+const cartCount = document.getElementById("cart-count");
+
 
 // Currently selected category
 let selectedCategory = "all";
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+function updateCartCount() {
+
+    const totalItems = cart.reduce(function (total, product) {
+        return total + Number(product.quantity || 0);
+    }, 0);
+
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+    }
+
+}
 
 
 // ========================================
@@ -271,7 +288,8 @@ cartButtons.forEach(function (button) {
 
 
         const productPrice =
-            productCard.querySelector(".shop__price").textContent;
+            Number(productCard.querySelector(".shop__price").textContent
+                .replace(/[₹,\s]/g, ""));
 
 
         const productImage =
@@ -299,10 +317,6 @@ cartButtons.forEach(function (button) {
 
 
         // Get existing cart
-        let cart =
-            JSON.parse(localStorage.getItem("cart")) || [];
-
-
         // Check if product already exists
         const existingProduct =
             cart.find(function (item) {
@@ -328,6 +342,8 @@ cartButtons.forEach(function (button) {
             "cart",
             JSON.stringify(cart)
         );
+
+        updateCartCount();
 
 
         // Button feedback
@@ -356,3 +372,4 @@ cartButtons.forEach(function (button) {
 // ========================================
 
 filterProducts();
+updateCartCount();
